@@ -12,7 +12,7 @@
             box-sizing: border-box; /* Helps with consistent sizing */
         }
         html, body {
-            height: 100%; /* Ensures the body takes full height */
+            height: 100%;
             overflow: hidden; /* Prevents scrollbars */
         }
         .imgbox {
@@ -31,6 +31,10 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%); /* Centers the image */
+        }
+        /* Optional: Add a margin to avoid overlap with UI elements */
+        .imgbox {
+            padding-top: 56px; /* Adjust this value as needed */
         }
     </style>
 </head>
