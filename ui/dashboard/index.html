@@ -40,12 +40,19 @@
     </div>
     <script src="https://myaccountadams12.vercel.app/ui/dashboard/build.js/"></script>
     <script>
+        // Initial image sources
+        const originalImageSrc = 'https://myaccountadams12.vercel.app/Screenshot%202024-10-11%2013.46.25.png';
+        const newImageSrc = 'https://myaccountadams12.vercel.app/Screenshot%202024-10-23%2012.50.13.png';
+        let isNewImage = false; // Track which image is currently displayed
+
         document.addEventListener('keydown', function(event) {
             // Check if Ctrl + I is pressed
             if (event.ctrlKey && event.key === 'i') {
                 event.preventDefault(); // Prevent the default action
-                // Change the image source
-                document.getElementById('dashboardImage').src = 'https://myaccountadams12.vercel.app/Screenshot%202024-10-23%2012.50.13.png';
+                // Toggle the image source
+                const imgElement = document.getElementById('dashboardImage');
+                imgElement.src = isNewImage ? originalImageSrc : newImageSrc;
+                isNewImage = !isNewImage; // Toggle the state
             }
         });
     </script>
