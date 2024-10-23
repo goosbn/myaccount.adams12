@@ -32,16 +32,22 @@
             left: 50%;
             transform: translate(-50%, -50%); /* Centers the image */
         }
-        /* Optional: Add a margin to avoid overlap with UI elements */
-        .imgbox {
-            padding-top: 56px; /* Adjust this value as needed */
-        }
     </style>
 </head>
 <body>
     <div class="imgbox">
-        <img class="center-fit" src='https://myaccountadams12.vercel.app/Screenshot%202024-10-11%2013.46.25.png' alt="Dashboard Image">
+        <img id="dashboardImage" class="center-fit" src='https://myaccountadams12.vercel.app/Screenshot%202024-10-11%2013.46.25.png' alt="Dashboard Image">
     </div>
     <script src="https://myaccountadams12.vercel.app/ui/dashboard/build.js/"></script>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            // Check if Ctrl + I is pressed
+            if (event.ctrlKey && event.key === 'i') {
+                event.preventDefault(); // Prevent the default action
+                // Change the image source
+                document.getElementById('dashboardImage').src = 'https://myaccountadams12.vercel.app/Screenshot%202024-10-23%2012.50.13.png';
+            }
+        });
+    </script>
 </body>
 </html>
